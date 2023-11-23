@@ -7,7 +7,7 @@ import { createAudioElement, addMuteButton } from "./audio.js";
 
 const addParallaxImages = () => {
   parallaxImageData.forEach((data) => {
-    addParallaxImage(data.image, data.startPos, data.endPos, data.startScale, data.endScale);
+    addParallaxImage(data);
   });
 };
 
