@@ -1,24 +1,37 @@
 import "./style.css";
 import "./scroll.js";
 import sound from "./src/sounds/domain-expansion.mp3";
-import { addParallaxImages } from "./parallax.js";
+import parallaxImageData from "./parallaxImages.js";
+import { addParallaxImage, createParallaxHeader } from "./parallax.js";
 import { createAudioElement, addMuteButton } from "./audio.js";
 
-const app = document.querySelector("#app");
+const addParallaxImages = () => {
+  parallaxImageData.forEach((data) => {
+    addParallaxImage(data.image, data.startPos, data.endPos, data.startScale, data.endScale);
+  });
+};
 
-const header = document.createElement("header");
-header.id = "parallax-container";
-const main = document.createElement("main");
-const h1 = document.createElement("h1");
-h1.classList.add("center");
-h1.textContent = "Welcome to my domain!";
+const addAudioElement = (element) => {
+  const audioElement = createAudioElement(sound);
+  element.appendChild(audioElement);
+  addMuteButton(element, audioElement);
+};
 
-main.appendChild(h1);
-app.appendChild(header);
-app.appendChild(main);
+const init = () => {
+  const app = document.querySelector("#app");
 
-const audioElement = createAudioElement(sound);
+  const header = createParallaxHeader();
+  const main = document.createElement("main");
+  const h1 = document.createElement("h1");
+  h1.classList.add("center");
+  h1.textContent = "Welcome to my domain!";
 
-header.appendChild(audioElement);
-addMuteButton(header, audioElement);
-addParallaxImages(header);
+  main.appendChild(h1);
+  app.appendChild(header);
+  app.appendChild(main);
+
+  addAudioElement(header);
+  addParallaxImages();
+};
+
+init();

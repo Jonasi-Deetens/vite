@@ -30,8 +30,10 @@ main {
   background-position: bottom;
 }
 
-#parallax-container img {
+#parallax-container div {
   position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .center {
@@ -46,6 +48,7 @@ main {
   height: 100%;
   z-index: 40;
   transition: filter 0.3s linear;
+  background-size: cover !important;
   filter: drop-shadow(0 -2px 5px black);
 }
 
@@ -66,8 +69,6 @@ main {
 .gojo-picture {
   width: 400px;
   height: 600px;
-  bottom: -100px;
-  left: 50%;
   z-index: 10;
   transform: translateX(-50%);
   transition: filter 0.3s linear;
@@ -77,8 +78,6 @@ main {
 .orb-picture {
   width: 40px;
   height: 40px;
-  left: calc(50% - 93px);
-  bottom: 450px;
   z-index: 20;
   transform-origin: bottom;
   transform: scale(0);
@@ -88,8 +87,6 @@ main {
 .rocks-zero-picture {
   width: 80px;
   height: 80px;
-  left: 50%;
-  bottom: -400px;
   z-index: 20;
   transform: translateX(-50%);
   filter: drop-shadow(0px -2px 2px rgb(255, 0, 208)) !important;
@@ -98,24 +95,18 @@ main {
 .rocks-one-picture {
   width: 60px;
   height: 80px;
-  bottom: -500px;
-  left: 50px;
   filter: drop-shadow(1px 0px 1px rgb(255, 0, 208)) !important;
 }
 
 .rocks-two-picture {
   width: 50px;
   height: 50px;
-  bottom: -100px;
-  left: 290px;
   filter: drop-shadow(1px 0px 1px rgb(255, 0, 208)) !important;
 }
 
 .rocks-three-picture {
   width: 60px;
   height: 70px;
-  bottom: -300px;
-  left: 520px;
   opacity: 0.80;
   filter: drop-shadow(1px 0px 1px rgb(255, 0, 208)) !important;
 }
@@ -123,8 +114,6 @@ main {
 .rocks-four-picture {
   width: 60px;
   height: 40px;
-  bottom: -300px;
-  left: 780px;
   opacity: 0.80;
   filter: drop-shadow(-1px 0px 1px rgb(255, 0, 208)) !important;
 }
@@ -132,8 +121,6 @@ main {
 .rocks-five-picture {
   width: 60px;
   height: 50px;
-  bottom: -100px;
-  left: 950px;
   opacity: 0.80;
   filter: drop-shadow(-1px 0px 1px rgb(255, 0, 208)) !important;
 }
@@ -141,16 +128,12 @@ main {
 .rocks-six-picture {
   width: 50px;
   height: 50px;
-  bottom: -100px;
-  left: 1150px;
   filter: drop-shadow(-1px 0px 1px rgb(255, 0, 208)) !important;
 }
 
 .rocks-seven-picture {
   width: 60px;
   height: 60px;
-  bottom: -250px;
-  left: 1300px;
   opacity: 0.95;
   filter: drop-shadow(-1px 0px 1px rgb(255, 0, 208)) !important;
 }

@@ -1,123 +1,68 @@
-export function addParallaxImages(element) {
-  const images = [
-    "./src/images/overlay.png",
-    "./src/images/gojo.webp",
-    "./src/images/orb.png",
-    "./src/images/rocks-zero.png",
-    "./src/images/rocks-one.png",
-    "./src/images/rocks-two.png",
-    "./src/images/rocks-three.png",
-    "./src/images/rocks-four.png",
-    "./src/images/rocks-five.png",
-    "./src/images/rocks-six.png",
-    "./src/images/rocks-seven.png",
-  ];
+import parallaxItemsList from "./parallaxItemsList";
 
-  const createHiddenBackground = () => {
-    const domain = document.createElement("div");
-    domain.classList.add("domain-picture");
-    element.appendChild(domain);
-  };
+export function createParallaxHeader() {
+  const header = document.createElement("header");
+  header.id = "parallax-container";
 
-  const createParallaxPictureElements = () => {
-    images.forEach((image) => {
-      const imageInfo = image.split("/")[3].split(".");
-      const imageName = imageInfo[0];
-      const imageType = imageInfo[1];
-
-      const picture = document.createElement("picture");
-
-      const source = document.createElement("source");
-      source.srcset = image;
-      source.type = imageType;
-      picture.appendChild(source);
-
-      const img = document.createElement("img");
-      img.src = image;
-      img.alt = "image of " + imageName;
-      img.classList.add(imageName + "-picture");
-      picture.appendChild(img);
-
-      element.appendChild(picture);
-    });
-  };
-
-  const init = () => {
-    createHiddenBackground();
-    createParallaxPictureElements();
-  };
-
-  init();
+  return header;
 }
 
-export function parallaxScroll() {
-  const maxScroll = 400;
-  const scrollPos = window.scrollY;
+export function setParallaxBackground(image) {
+  const header = document.querySelector("#parallax-container");
+  header.style.backGroundImage = image;
+}
 
-  const updateParallax = () => {
-    if (scrollPos <= maxScroll) {
-      updatePositions(scrollPos, maxScroll);
+export function addParallaxImage(image, startPos, endPos, startScale, endScale) {
+  const imageInfo = image.split("/")[3].split(".");
+  const imageName = imageInfo[0];
+
+  const header = document.querySelector("#parallax-container");
+  const div = document.createElement("div");
+  div.classList.add(imageName + "-picture");
+  div.style.backgroundImage = "url(" + image + ")";
+  div.style.bottom = startPos[0] + "px";
+  div.style.left = startPos[1];
+  header.appendChild(div);
+
+  const parallaxItem = {
+    element: div,
+    startPosition: startPos,
+    endPosition: endPos,
+    startScale: startScale,
+    endScale: endScale,
+  };
+  parallaxItemsList.addItem(parallaxItem);
+}
+
+export function parallaxScroll(scrollPos, maxScroll) {
+  const calculateDifference = (start, end) => {
+    let startValue = 0;
+    let endValue = 0;
+    let result = 0;
+
+    if (end.includes("%")) {
+      let startCharList = start.split(" ");
+      let endCharList = end.split(" ");
+
+      if (endCharList.length > 1) {
+        startValue = parseInt(startCharList[2].split("px"));
+        endValue = parseInt(endCharList[2].split("px"));
+        result = (endValue - startValue) * (scrollPos / maxScroll) + "px";
+      } else result = "-50%";
     } else {
-      updatePositions(maxScroll, maxScroll);
+      startValue = parseInt(start.split("px"));
+      endValue = parseInt(end.split("px"));
+      result = (endValue - startValue) * (scrollPos / maxScroll) + "px";
     }
+    return result;
   };
 
-  const updatePositions = (scrollPos, maxScroll) => {
-    const domainPicture = document.querySelector(".domain-picture");
-    const gojoPicture = document.querySelector(".gojo-picture");
-    const orbPicture = document.querySelector(".orb-picture");
-
-    const overlay = document.querySelector(".overlay-picture");
-    const rocksZeroPicture = document.querySelector(".rocks-zero-picture");
-    const rocksOnePicture = document.querySelector(".rocks-one-picture");
-    const rocksTwoPicture = document.querySelector(".rocks-two-picture");
-    const rocksThreePicture = document.querySelector(".rocks-three-picture");
-    const rocksFourPicture = document.querySelector(".rocks-four-picture");
-    const rocksFivePicture = document.querySelector(".rocks-five-picture");
-    const rocksSixPicture = document.querySelector(".rocks-six-picture");
-    const rocksSevenPicture = document.querySelector(".rocks-seven-picture");
-
-    domainPicture.style.width = scrollPos / (maxScroll / 100) + "%";
-
-    if (scrollPos < 15) {
-      gojoPicture.style.filter = "drop-shadow(0 0 2px black)";
-      overlay.style.filter = "drop-shadow(0 -2px 5px black)";
-    } else {
-      gojoPicture.style.filter = "drop-shadow(0 0 8px rgb(255, 0, 208))";
-      overlay.style.filter = "drop-shadow(0px -1px 3px rgb(255, 0, 208))";
-    }
-    gojoPicture.style.transform = "translateX(-50%)";
-    gojoPicture.style.transform += "scale(" + (1 - scrollPos / ((maxScroll * 3) / 2)) + ")";
-
-    orbPicture.style.transform = "translateY(" + 170 * (scrollPos / maxScroll) + "px)";
-    orbPicture.style.transform += "translateX(" + scrollPos / (maxScroll / 50) + "px)";
-    orbPicture.style.transform += "scale(" + scrollPos / (maxScroll / 1.5) + ")";
-
-    rocksZeroPicture.style.transform = "translateX(-50%)";
-    rocksZeroPicture.style.transform += "translateY(" + -450 * (scrollPos / maxScroll) + "px)";
-    rocksZeroPicture.style.transform += "scale(" + scrollPos / maxScroll + ")";
-
-    rocksOnePicture.style.transform = "translateY(" + -780 * (scrollPos / maxScroll) + "px)";
-    rocksOnePicture.style.transform += "scale(" + (0.5 + scrollPos / maxScroll) + ")";
-
-    rocksTwoPicture.style.transform = "translateY(" + -290 * (scrollPos / maxScroll) + "px)";
-    rocksTwoPicture.style.transform += "scale(" + (0.2 + scrollPos / maxScroll) + ")";
-
-    rocksThreePicture.style.transform = "translateY(" + -500 * (scrollPos / maxScroll) + "px)";
-    rocksThreePicture.style.transform += "scale(" + (1.5 - scrollPos / maxScroll) + ")";
-
-    rocksFourPicture.style.transform = "translateY(" + -600 * (scrollPos / maxScroll) + "px)";
-    rocksFourPicture.style.transform += "scale(" + (1.5 - scrollPos / maxScroll) + ")";
-
-    rocksFivePicture.style.transform = "translateY(" + -350 * (scrollPos / maxScroll) + "px)";
-    rocksFivePicture.style.transform += "scale(" + (1.9 - scrollPos / maxScroll) + ")";
-
-    rocksSixPicture.style.transform = "translateY(" + -200 * (scrollPos / maxScroll) + "px)";
-    rocksSixPicture.style.transform += "scale(" + (0.5 + scrollPos / maxScroll) + ")";
-
-    rocksSevenPicture.style.transform = "translateY(" + -510 * (scrollPos / maxScroll) + "px)";
-    rocksSevenPicture.style.transform += "scale(" + (2.2 - scrollPos / maxScroll) + ")";
-  };
-
-  updateParallax();
+  parallaxItemsList.getAllItems().forEach((item) => {
+    item.element.style.transform =
+      "translateY(" + (item.startPosition[0] - item.endPosition[0]) * (scrollPos / maxScroll) + "px)";
+    item.element.style.transform +=
+      "translateX(" + calculateDifference(item.endPosition[1], item.startPosition[1]) + ")";
+    item.element.style.transform +=
+      "scale(" + (item.startScale + (item.endScale - item.startScale) * (scrollPos / maxScroll)) + ")";
+  });
 }
