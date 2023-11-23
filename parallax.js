@@ -1,16 +1,16 @@
 export function addParallaxImages(element) {
   const images = [
-    "./images/overlay.png",
-    "./images/gojo.webp",
-    "./images/orb.png",
-    "./images/rocks-zero.png",
-    "./images/rocks-one.png",
-    "./images/rocks-two.png",
-    "./images/rocks-three.png",
-    "./images/rocks-four.png",
-    "./images/rocks-five.png",
-    "./images/rocks-six.png",
-    "./images/rocks-seven.png",
+    "./src/images/overlay.png",
+    "./src/images/gojo.webp",
+    "./src/images/orb.png",
+    "./src/images/rocks-zero.png",
+    "./src/images/rocks-one.png",
+    "./src/images/rocks-two.png",
+    "./src/images/rocks-three.png",
+    "./src/images/rocks-four.png",
+    "./src/images/rocks-five.png",
+    "./src/images/rocks-six.png",
+    "./src/images/rocks-seven.png",
   ];
 
   const createHiddenBackground = () => {
@@ -21,7 +21,7 @@ export function addParallaxImages(element) {
 
   const createParallaxPictureElements = () => {
     images.forEach((image) => {
-      const imageInfo = image.split("/")[2].split(".");
+      const imageInfo = image.split("/")[3].split(".");
       const imageName = imageInfo[0];
       const imageType = imageInfo[1];
 
@@ -97,26 +97,27 @@ export function parallaxScroll() {
     rocksZeroPicture.style.transform += "translateY(" + -420 * (scrollPos / maxScroll) + "px)";
     rocksZeroPicture.style.transform += "scale(" + scrollPos / maxScroll + ")";
 
-    rocksOnePicture.style.transform = "translateY(" + -380 * (scrollPos / maxScroll) + "px)";
+    rocksOnePicture.style.transform = "translateY(" + -780 * (scrollPos / maxScroll) + "px)";
     rocksOnePicture.style.transform += "scale(" + (0.5 + scrollPos / maxScroll) + ")";
 
-    rocksTwoPicture.style.transform = "translateY(" + -520 * (scrollPos / maxScroll) + "px)";
-    rocksTwoPicture.style.transform += "scale(" + (1.5 - scrollPos / maxScroll) + ")";
+    rocksTwoPicture.style.transform = "translateY(" + -290 * (scrollPos / maxScroll) + "px)";
+    rocksTwoPicture.style.transform += "scale(" + (0.2 + scrollPos / maxScroll) + ")";
 
     rocksThreePicture.style.transform = "translateY(" + -300 * (scrollPos / maxScroll) + "px)";
-    rocksThreePicture.style.transform += "scale(" + (0.5 + scrollPos / maxScroll) + ")";
+    rocksThreePicture.style.transform += "scale(" + (1.5 - scrollPos / maxScroll) + ")";
+    rocksThreePicture.style.opacity = 1 - scrollPos / maxScroll / 5;
 
-    rocksFourPicture.style.transform = "translateY(" + -400 * (scrollPos / maxScroll) + "px)";
+    rocksFourPicture.style.transform = "translateY(" + -600 * (scrollPos / maxScroll) + "px)";
     rocksFourPicture.style.transform += "scale(" + (1.5 - scrollPos / maxScroll) + ")";
 
-    rocksFivePicture.style.transform = "translateY(" + -500 * (scrollPos / maxScroll) + "px)";
+    rocksFivePicture.style.transform = "translateY(" + -350 * (scrollPos / maxScroll) + "px)";
     rocksFivePicture.style.transform += "scale(" + (1.9 - scrollPos / maxScroll) + ")";
 
-    rocksSixPicture.style.transform = "translateY(" + -400 * (scrollPos / maxScroll) + "px)";
+    rocksSixPicture.style.transform = "translateY(" + -300 * (scrollPos / maxScroll) + "px)";
     rocksSixPicture.style.transform += "scale(" + (0.5 + scrollPos / maxScroll) + ")";
 
-    rocksSevenPicture.style.transform = "translateY(" + -460 * (scrollPos / maxScroll) + "px)";
-    rocksSevenPicture.style.transform += "scale(" + (1.5 - scrollPos / maxScroll) + ")";
+    rocksSevenPicture.style.transform = "translateY(" + -360 * (scrollPos / maxScroll) + "px)";
+    rocksSevenPicture.style.transform += "scale(" + (2 - scrollPos / maxScroll) + ")";
   };
 
   updateParallax();

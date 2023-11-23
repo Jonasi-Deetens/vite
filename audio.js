@@ -1,42 +1,30 @@
-export function addAudioElement(element, sound) {
-  const addAudio = () => {
+export function createAudioElement(sound) {
     const audio = document.createElement("audio");
     audio.id = "audio-player";
     audio.src = sound;
     audio.autoplay = false;
     audio.muted = true;
     audio.setAttribute("type", "mp3");
-    element.appendChild(audio);
-  };
+    return audio;
+}
 
-  const addMuteButton = () => {
+export function addMuteButton(element, audioElement) {
     const muteButton = document.createElement("button");
     muteButton.id = "unmute-button";
     muteButton.textContent = "Unmute";
-    muteButton.addEventListener("click", muteAudioPlayer);
+    muteButton.addEventListener("click", () => toggleMute(audioElement, muteButton));
     element.appendChild(muteButton);
-  };
-
-  const muteAudioPlayer = (event) => {
-    const audio = document.querySelector("#audio-player");
-    audio.muted = !audio.muted;
-    if (audio.muted) event.target.textContent = "Unmute";
-    else event.target.textContent = "Mute";
-  };
-
-  const init = () => {
-    addAudio();
-    addMuteButton();
-  };
-
-  init();
 }
 
-export function play() {
-  const audio = document.querySelector("#audio-player");
-  if (window.scrollY <= 500) audio.volume = 0.5 - window.scrollY / 1000;
+export function toggleMute(audioElement, muteButton) {
+    audioElement.muted = !audioElement.muted;
+    muteButton.textContent = audioElement.muted ? "Unmute" : "Mute";
+}
 
-  if (audio.paused) {
-    audio.play();
+export function play(audioElement) {
+  if (window.scrollY <= 500) audioElement.volume = 0.5 - window.scrollY / 1000;
+
+  if (audioElement.paused) {
+    audioElement.play();
   }
 }

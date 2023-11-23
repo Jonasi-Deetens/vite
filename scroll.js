@@ -3,8 +3,9 @@ import { parallaxScroll } from "./parallax";
 
 let canPlayAudio = true;
 window.onscroll = () => {
+    const audioElement = document.querySelector("#audio-player");
     if (canPlayAudio) {
-        play();
+        play(audioElement);
         canPlayAudio = false;
     } 
     parallaxScroll();

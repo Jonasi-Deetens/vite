@@ -25,7 +25,7 @@ main {
   position: relative;
   height: 100svh;
   overflow: hidden;
-  background-image: url(./images/background.jpg);
+  background-image: url(./src/images/background.jpg);
   background-size: cover;
   background-position: bottom;
 }
@@ -58,7 +58,7 @@ main {
   filter: invert(1);
 
   box-shadow: inset 0 0 25px white;
-  background-image: url(./images/background.jpg);
+  background-image: url(./src/images/background.jpg);
   background-size: cover;
   background-position: bottom;
 }
@@ -98,7 +98,7 @@ main {
 .rocks-one-picture {
   width: 60px;
   height: 80px;
-  bottom: -100px;
+  bottom: -500px;
   left: 50px;
   filter: drop-shadow(1px 0px 1px rgb(255, 0, 208)) !important;
 }
@@ -106,7 +106,7 @@ main {
 .rocks-two-picture {
   width: 50px;
   height: 50px;
-  bottom: -200px;
+  bottom: -100px;
   left: 290px;
   filter: drop-shadow(1px 0px 1px rgb(255, 0, 208)) !important;
 }
@@ -116,14 +116,13 @@ main {
   height: 70px;
   bottom: -100px;
   left: 520px;
-  z-index: 30;
   filter: drop-shadow(1px 0px 1px rgb(255, 0, 208)) !important;
 }
 
 .rocks-four-picture {
   width: 60px;
   height: 40px;
-  bottom: -100px;
+  bottom: -300px;
   left: 780px;
   filter: drop-shadow(-1px 0px 1px rgb(255, 0, 208)) !important;
 }
