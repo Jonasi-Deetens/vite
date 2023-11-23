@@ -48,7 +48,7 @@ export function addParallaxImage(data) {
 }
 
 export function parallaxScroll(scrollPos, maxScroll) {
-  const calculateDifference = (start, end) => {
+  const calculatePosDifference = (start, end) => {
     let startValue = 0;
     let endValue = 0;
     let result = 0;
@@ -75,7 +75,7 @@ export function parallaxScroll(scrollPos, maxScroll) {
     item.element.style.transform =
       "translateY(" + (item.startPosition[0] - item.endPosition[0]) * (scrollPos / maxScroll) + "px)";
     item.element.style.transform +=
-      "translateX(" + calculateDifference(item.endPosition[1], item.startPosition[1]) + ")";
+      "translateX(" + calculatePosDifference(item.endPosition[1], item.startPosition[1]) + ")";
     item.element.style.transform +=
       "scale(" + (item.startScale + (item.endScale - item.startScale) * (scrollPos / maxScroll)) + ")";
   });
