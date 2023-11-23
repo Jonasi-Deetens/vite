@@ -4,12 +4,21 @@ export function createParallaxHeader() {
   const header = document.createElement("header");
   header.id = "parallax-container";
 
+  const overlayDiv = document.createElement("div");
+  overlayDiv.classList.add("overlay-picture");
+  header.appendChild(overlayDiv);
+
   return header;
 }
 
 export function setParallaxBackground(image) {
   const header = document.querySelector("#parallax-container");
   header.style.backGroundImage = image;
+}
+
+export function setParallaxOverlay(image) {
+  const overlay = document.querySelector(".overlay-picture");
+  overlay.style.backGroundImage = image;
 }
 
 export function addParallaxImage(image, startPos, endPos, startScale, endScale) {

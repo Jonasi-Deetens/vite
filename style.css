@@ -48,6 +48,7 @@ main {
   height: 100%;
   z-index: 40;
   transition: filter 0.3s linear;
+  background-image: url(./src/images/overlay.png);
   background-size: cover !important;
   filter: drop-shadow(0 -2px 5px black);
 }
