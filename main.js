@@ -1,4 +1,5 @@
 import "./style.css";
+import "./scroll.js";
 import { addParallaxImages } from "./parallax.js";
 import { addAudioElement } from "./audio.js";
 

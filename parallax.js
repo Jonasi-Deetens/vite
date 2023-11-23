@@ -45,17 +45,16 @@ export function addParallaxImages(element) {
   const init = () => {
     createHiddenBackground();
     createParallaxPictureElements();
-
-    window.onscroll = () => {
-      updateParallax();
-    };
   };
 
   init();
+}
+
+export function parallaxScroll() {
+  const maxScroll = 400;
+  const scrollPos = window.scrollY;
 
   const updateParallax = () => {
-    const maxScroll = 400;
-    const scrollPos = window.scrollY;
     if (scrollPos <= maxScroll) {
       updatePositions(scrollPos, maxScroll);
     } else {
@@ -119,4 +118,6 @@ export function addParallaxImages(element) {
     rocksSevenPicture.style.transform = "translateY(" + -460 * (scrollPos / maxScroll) + "px)";
     rocksSevenPicture.style.transform += "scale(" + (1.5 - scrollPos / maxScroll) + ")";
   };
+
+  updateParallax();
 }

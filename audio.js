@@ -1,6 +1,4 @@
 export function addAudioElement(element, sound) {
-  let canPlayAudio = true;
-
   const addAudio = () => {
     const audio = document.createElement("audio");
     audio.id = "audio-player";
@@ -19,18 +17,6 @@ export function addAudioElement(element, sound) {
     element.appendChild(muteButton);
   };
 
-  const playAudio = () => {
-    const audio = document.querySelector("#audio-player");
-    if (window.scrollY <= 500) audio.volume = 0.5 - window.scrollY / 1000;
-
-    if (audio.paused && canPlayAudio) {
-      audio.play();
-      canPlayAudio = false;
-    }
-
-    if (window.scrollY === 0) canPlayAudio = true;
-  };
-
   const muteAudioPlayer = (event) => {
     const audio = document.querySelector("#audio-player");
     audio.muted = !audio.muted;
@@ -41,11 +27,16 @@ export function addAudioElement(element, sound) {
   const init = () => {
     addAudio();
     addMuteButton();
-
-    window.onscroll = () => {
-      playAudio();
-    };
   };
 
   init();
+}
+
+export function play() {
+  const audio = document.querySelector("#audio-player");
+  if (window.scrollY <= 500) audio.volume = 0.5 - window.scrollY / 1000;
+
+  if (audio.paused) {
+    audio.play();
+  }
 }
