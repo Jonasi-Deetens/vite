@@ -1,96 +1,153 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0; 
+  color: white;  
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+main {
+  background-color: rgb(24, 23, 23);
+  height: 100svh;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+#unmute-button {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  z-index: 50;
+  transform: translateX(-50%);
+}
+
+#parallax-container {
+  position: relative;
+  height: 100svh;
+  overflow: hidden;
+  background-image: url(./images/background.jpg);
+  background-size: cover;
+  background-position: bottom;
+}
+
+#parallax-container img {
+  position: absolute;
+}
+
+.center {
+  width: 50%;
+  padding: 20px;
+  margin: auto;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+.overlay-picture {
+  width: 100%;
+  height: 100%;
+  z-index: 40;
+  transition: filter 0.3s linear;
+  filter: drop-shadow(0 -2px 5px black);
 }
 
-.card {
-  padding: 2em;
+.domain-picture {
+  position: absolute;
+  width: 0;
+  height: 100svh;
+  left: 50%;
+  transform: translate(-50%, 0);
+  filter: invert(1);
+
+  box-shadow: inset 0 0 25px white;
+  background-image: url(./images/background.jpg);
+  background-size: cover;
+  background-position: bottom;
 }
 
-.read-the-docs {
-  color: #888;
+.gojo-picture {
+  width: 400px;
+  height: 600px;
+  bottom: -100px;
+  left: 50%;
+  z-index: 10;
+  transform: translateX(-50%);
+  transition: filter 0.3s linear;
+  filter: drop-shadow(0 0px 2px black);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.orb-picture {
+  width: 40px;
+  height: 40px;
+  left: calc(50% - 93px);
+  bottom: 450px;
+  z-index: 20;
+  transform-origin: bottom;
+  transform: scale(0);
+  filter: drop-shadow(0px 0px 10px rgb(255, 0, 208)) !important;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.rocks-zero-picture {
+  width: 120px;
+  height: 120px;
+  left: 50%;
+  bottom: -400px;
+  z-index: 20;
+  transform: translateX(-50%);
+  filter: drop-shadow(0px -2px 2px rgb(255, 0, 208)) !important;
+}
+
+.rocks-one-picture {
+  width: 60px;
+  height: 80px;
+  bottom: -100px;
+  left: 50px;
+  filter: drop-shadow(1px 0px 1px rgb(255, 0, 208)) !important;
+}
+
+.rocks-two-picture {
+  width: 50px;
+  height: 50px;
+  bottom: -200px;
+  left: 290px;
+  filter: drop-shadow(1px 0px 1px rgb(255, 0, 208)) !important;
+}
+
+.rocks-three-picture {
+  width: 60px;
+  height: 70px;
+  bottom: -100px;
+  left: 520px;
+  z-index: 30;
+  filter: drop-shadow(1px 0px 1px rgb(255, 0, 208)) !important;
+}
+
+.rocks-four-picture {
+  width: 60px;
+  height: 40px;
+  bottom: -100px;
+  left: 780px;
+  filter: drop-shadow(-1px 0px 1px rgb(255, 0, 208)) !important;
+}
+
+.rocks-five-picture {
+  width: 60px;
+  height: 50px;
+  bottom: -100px;
+  left: 950px;
+  filter: drop-shadow(-1px 0px 1px rgb(255, 0, 208)) !important;
+}
+
+.rocks-six-picture {
+  width: 70px;
+  height: 70px;
+  bottom: -200px;
+  left: 1150px;
+  filter: drop-shadow(-1px 0px 1px rgb(255, 0, 208)) !important;
+}
+
+.rocks-seven-picture {
+  width: 60px;
+  height: 60px;
+  bottom: -100px;
+  left: 1300px;
+  filter: drop-shadow(-1px 0px 1px rgb(255, 0, 208)) !important;
 }
