@@ -94,7 +94,7 @@ export function parallaxScroll() {
     orbPicture.style.transform += "scale(" + scrollPos / (maxScroll / 1.5) + ")";
 
     rocksZeroPicture.style.transform = "translateX(-50%)";
-    rocksZeroPicture.style.transform += "translateY(" + -420 * (scrollPos / maxScroll) + "px)";
+    rocksZeroPicture.style.transform += "translateY(" + -450 * (scrollPos / maxScroll) + "px)";
     rocksZeroPicture.style.transform += "scale(" + scrollPos / maxScroll + ")";
 
     rocksOnePicture.style.transform = "translateY(" + -780 * (scrollPos / maxScroll) + "px)";
@@ -103,9 +103,8 @@ export function parallaxScroll() {
     rocksTwoPicture.style.transform = "translateY(" + -290 * (scrollPos / maxScroll) + "px)";
     rocksTwoPicture.style.transform += "scale(" + (0.2 + scrollPos / maxScroll) + ")";
 
-    rocksThreePicture.style.transform = "translateY(" + -300 * (scrollPos / maxScroll) + "px)";
+    rocksThreePicture.style.transform = "translateY(" + -500 * (scrollPos / maxScroll) + "px)";
     rocksThreePicture.style.transform += "scale(" + (1.5 - scrollPos / maxScroll) + ")";
-    rocksThreePicture.style.opacity = 1 - scrollPos / maxScroll / 5;
 
     rocksFourPicture.style.transform = "translateY(" + -600 * (scrollPos / maxScroll) + "px)";
     rocksFourPicture.style.transform += "scale(" + (1.5 - scrollPos / maxScroll) + ")";
@@ -113,11 +112,11 @@ export function parallaxScroll() {
     rocksFivePicture.style.transform = "translateY(" + -350 * (scrollPos / maxScroll) + "px)";
     rocksFivePicture.style.transform += "scale(" + (1.9 - scrollPos / maxScroll) + ")";
 
-    rocksSixPicture.style.transform = "translateY(" + -300 * (scrollPos / maxScroll) + "px)";
+    rocksSixPicture.style.transform = "translateY(" + -200 * (scrollPos / maxScroll) + "px)";
     rocksSixPicture.style.transform += "scale(" + (0.5 + scrollPos / maxScroll) + ")";
 
-    rocksSevenPicture.style.transform = "translateY(" + -360 * (scrollPos / maxScroll) + "px)";
-    rocksSevenPicture.style.transform += "scale(" + (2 - scrollPos / maxScroll) + ")";
+    rocksSevenPicture.style.transform = "translateY(" + -510 * (scrollPos / maxScroll) + "px)";
+    rocksSevenPicture.style.transform += "scale(" + (2.2 - scrollPos / maxScroll) + ")";
   };
 
   updateParallax();

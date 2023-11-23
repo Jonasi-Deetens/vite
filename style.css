@@ -86,8 +86,8 @@ main {
 }
 
 .rocks-zero-picture {
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   left: 50%;
   bottom: -400px;
   z-index: 20;
@@ -114,8 +114,9 @@ main {
 .rocks-three-picture {
   width: 60px;
   height: 70px;
-  bottom: -100px;
+  bottom: -300px;
   left: 520px;
+  opacity: 0.80;
   filter: drop-shadow(1px 0px 1px rgb(255, 0, 208)) !important;
 }
 
@@ -124,6 +125,7 @@ main {
   height: 40px;
   bottom: -300px;
   left: 780px;
+  opacity: 0.80;
   filter: drop-shadow(-1px 0px 1px rgb(255, 0, 208)) !important;
 }
 
@@ -132,13 +134,14 @@ main {
   height: 50px;
   bottom: -100px;
   left: 950px;
+  opacity: 0.80;
   filter: drop-shadow(-1px 0px 1px rgb(255, 0, 208)) !important;
 }
 
 .rocks-six-picture {
-  width: 70px;
-  height: 70px;
-  bottom: -200px;
+  width: 50px;
+  height: 50px;
+  bottom: -100px;
   left: 1150px;
   filter: drop-shadow(-1px 0px 1px rgb(255, 0, 208)) !important;
 }
@@ -146,7 +149,8 @@ main {
 .rocks-seven-picture {
   width: 60px;
   height: 60px;
-  bottom: -100px;
+  bottom: -250px;
   left: 1300px;
+  opacity: 0.95;
   filter: drop-shadow(-1px 0px 1px rgb(255, 0, 208)) !important;
 }
