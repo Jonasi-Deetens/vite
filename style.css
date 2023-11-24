@@ -50,7 +50,7 @@ main {
   transition: filter 0.3s linear;
   background-image: url(./src/images/overlay.png);
   background-size: cover !important;
-  filter: drop-shadow(0px 0px 10px rgb(255, 0, 208)) !important;
+  filter: drop-shadow(0px 0px 6px rgb(255, 0, 208)) !important;
 }
 
 .inverse-picture {
@@ -68,5 +68,5 @@ main {
 }
 
 .parallax-picture {
-  filter: drop-shadow(0px 0px 10px rgb(255, 0, 208));
+  filter: drop-shadow(0px 0px 2px rgb(255, 0, 208));
 }
