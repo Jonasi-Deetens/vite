@@ -2,6 +2,10 @@
 
 This project demonstrates the implementation of Vite, a fast, opinionated web dev build tool, for creating a custom component within a web application.
 
+## Live demo
+
+[Parallax compenent demo](https://jonasideetens-vite.netlify.app)
+
 ## Description
 
 The primary goal of this project is to showcase the integration of Vite, a modern build tool for frontend development, while focusing on creating a custom reusable component within the Vite-powered web application.
