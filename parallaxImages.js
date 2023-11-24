@@ -1,3 +1,14 @@
+import gojoImage from "./src/images/gojo.webp";
+import orbImage from "./src/images/orb.png";
+import rocksZeroImage from "./src/images/rocks-zero.png";
+import rocksOneImage from "./src/images/rocks-one.png";
+import rocksTwoImage from "./src/images/rocks-two.png";
+import rocksThreeImage from "./src/images/rocks-three.png";
+import rocksFourImage from "./src/images/rocks-four.png";
+import rocksFiveImage from "./src/images/rocks-five.png";
+import rocksSixImage from "./src/images/rocks-six.png";
+import rocksSevenImage from "./src/images/rocks-seven.png";
+
 const parallaxImageData = [
   { image: "./src/images/gojo.webp", startPos: [-100, "50%"], endPos: [-100, "50%"], startScale: 1, endScale: 0.4 },
   {
@@ -8,7 +19,13 @@ const parallaxImageData = [
     endScale: 2.5,
   },
   { image: "./src/images/rocks-zero.png", startPos: [-100, "50%"], endPos: [40, "50%"], startScale: 1, endScale: 1.2 },
-  { image: "./src/images/rocks-one.png", startPos: [-100, "50px"], endPos: [250, "50px"], startScale: 1, endScale: 1.3 },
+  {
+    image: "./src/images/rocks-one.png",
+    startPos: [-100, "50px"],
+    endPos: [250, "50px"],
+    startScale: 1,
+    endScale: 1.3,
+  },
   {
     image: "./src/images/rocks-two.png",
     startPos: [-100, "330px"],

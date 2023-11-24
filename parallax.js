@@ -25,6 +25,11 @@ export function setParallaxOverlay(image) {
   overlay.style.backGroundImage = image;
 }
 
+export function setParallaxInverse(image) {
+  const inverse = document.querySelector(".inverse-picture");
+  inverse.style.backGroundImage = image;
+}
+
 export function addParallaxImage(data) {
   const imageInfo = data.image.split("/")[3].split(".");
   const imageName = imageInfo[0];
