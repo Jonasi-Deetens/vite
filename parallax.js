@@ -31,15 +31,16 @@ export function setParallaxInverse(image) {
 }
 
 export function addParallaxImage(data) {
-  const imageInfo = data.image.split("/")[3].split(".");
-  const imageName = imageInfo[0];
-
   const header = document.querySelector("#parallax-container");
   const div = document.createElement("div");
-  div.classList.add(imageName + "-picture");
+  div.classList.add("parallax-picture");
   div.style.backgroundImage = "url(" + data.image + ")";
+  div.style.width = data.width + "px";
+  div.style.height = data.height + "px";
   div.style.bottom = data.startPos[0] + "px";
   div.style.left = data.startPos[1];
+  div.style.zIndex = data.layer;
+
   header.appendChild(div);
 
   const parallaxItem = {
@@ -50,6 +51,7 @@ export function addParallaxImage(data) {
     endScale: data.endScale,
   };
   parallaxItemsList.addItem(parallaxItem);
+  parallaxScroll(0, 1);
 }
 
 export function parallaxScroll(scrollPos, maxScroll) {

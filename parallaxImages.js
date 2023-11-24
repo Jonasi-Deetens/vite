@@ -10,21 +10,45 @@ import rocksSixImage from "./src/images/rocks-six.png";
 import rocksSevenImage from "./src/images/rocks-seven.png";
 
 const parallaxImageData = [
-  { image: gojoImage, startPos: [-100, "50%"], endPos: [-100, "50%"], startScale: 1, endScale: 0.4 },
+  {
+    image: gojoImage,
+    startPos: [-100, "50%"],
+    endPos: [-100, "50%"],
+    startScale: 1,
+    endScale: 0.4,
+    width: 400,
+    height: 600,
+    layer: 5,
+  },
   {
     image: orbImage,
     startPos: [450, "calc(50% - 93px)"],
-    endPos: [290, "calc(50% - 43px)"],
+    endPos: [320, "calc(50% - 46px)"],
     startScale: 0,
     endScale: 2.5,
+    width: 40,
+    height: 40,
+    layer: 10,
   },
-  { image: rocksZeroImage, startPos: [-100, "50%"], endPos: [40, "50%"], startScale: 1, endScale: 1.2 },
+  {
+    image: rocksZeroImage,
+    startPos: [-100, "50%"],
+    endPos: [40, "50%"],
+    startScale: 1,
+    endScale: 1.2,
+    width: 80,
+    height: 80,
+    layer: 10,
+  },
   {
     image: rocksOneImage,
     startPos: [-100, "50px"],
     endPos: [250, "50px"],
     startScale: 1,
     endScale: 1.3,
+    width: 60,
+    height: 80,
+    layer: 10,
   },
   {
     image: rocksTwoImage,
@@ -32,6 +56,9 @@ const parallaxImageData = [
     endPos: [180, "330px"],
     startScale: 1,
     endScale: 1.3,
+    width: 50,
+    height: 50,
+    layer: 10,
   },
   {
     image: rocksThreeImage,
@@ -39,6 +66,9 @@ const parallaxImageData = [
     endPos: [260, "520px"],
     startScale: 1,
     endScale: 0.8,
+    width: 60,
+    height: 70,
+    layer: 1,
   },
   {
     image: rocksFourImage,
@@ -46,6 +76,9 @@ const parallaxImageData = [
     endPos: [300, "780px"],
     startScale: 1,
     endScale: 0.8,
+    width: 60,
+    height: 40,
+    layer: 1,
   },
   {
     image: rocksFiveImage,
@@ -53,6 +86,9 @@ const parallaxImageData = [
     endPos: [250, "950px"],
     startScale: 1,
     endScale: 0.8,
+    width: 60,
+    height: 50,
+    layer: 1,
   },
   {
     image: rocksSixImage,
@@ -60,6 +96,9 @@ const parallaxImageData = [
     endPos: [160, "1150px"],
     startScale: 1,
     endScale: 1.3,
+    width: 50,
+    height: 50,
+    layer: 10,
   },
   {
     image: rocksSevenImage,
@@ -67,6 +106,9 @@ const parallaxImageData = [
     endPos: [190, "1300px"],
     startScale: 1,
     endScale: 1.3,
+    width: 60,
+    height: 60,
+    layer: 10,
   },
 ];
 
